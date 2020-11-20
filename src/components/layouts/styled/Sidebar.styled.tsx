@@ -18,8 +18,7 @@ export const Sidenav = styled.div`
 `;
 
 export const SidebarHead = styled.div.attrs({ className: 'sidebarHead' })`
-    height: 8em;
-    border-bottom: 1px solid #d9defd;
+    height: 6em;
     display: flex;
     align-items: center;
     justify-content: space-between;

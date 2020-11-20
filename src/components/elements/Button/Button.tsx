@@ -9,6 +9,8 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'none',
         fontSize: 16,
         borderRadius: (props: CustomProps) => props.borderRadius,
+        border: (props: CustomProps) => props.border,
+        width: (props: CustomProps) => props.width,
         lineHeight: (props: CustomProps) => props.lineHeight,
         color: (props: CustomProps) => (props.color ? props.color : '#ffffff'),
         backgroundColor: (props: CustomProps) => (props.backgroundColor ? props.backgroundColor : '#405BF5'),
@@ -26,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
             '"Segoe UI Symbol"',
         ].join(','),
         '&:hover': {
-            backgroundColor: (props: CustomProps) => props.backgroundColorHover,
+            backgroundColor: (props: CustomProps) => (props.backgroundColor ? props.backgroundColor : '#405BF5'),
             borderColor: (props: CustomProps) => props.borderColorHover,
             boxShadow: 'none',
         },
@@ -56,6 +58,8 @@ type CustomProps = {
     color?: string;
     lineHeight?: number;
     disableColor?: string;
+    border?: string;
+    width?: string;
 };
 
 type CustomButtonProps = ButtonProps & {

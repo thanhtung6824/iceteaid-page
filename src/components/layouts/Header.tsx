@@ -52,7 +52,14 @@ const Header: React.FC = () => {
                     <Text>Documentation</Text>
                     <VerticalLine border={'1px solid #D9DEFD'} height={'1em'} margin={'0 1em'} />
                     <Avatar>
-                        <img src={noAvatar} alt="avatar" />
+                        <img
+                            src={
+                                data && data.data.payload.avatar
+                                    ? `${process.env.REACT_APP_BACKEND}${data.data.payload.avatar}`
+                                    : noAvatar
+                            }
+                            alt="avatar"
+                        />
                     </Avatar>
                     <Text>{data ? data.data.payload.displayName.split('@')[0] : <Skeleton />}</Text>
                     <MenuPro

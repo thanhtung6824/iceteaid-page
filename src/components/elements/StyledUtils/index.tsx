@@ -115,9 +115,10 @@ export const LogoText = styled.div`
 `;
 
 export const ColorfulIcon = styled.div<{ color: string; darkMode?: boolean; darkModeColor?: string }>`
-    color: ${(props) => (props.darkMode ? props.color : props.darkModeColor)};
+    color: ${(props) => (props.darkMode ? props.darkModeColor : props.color)};
     display: flex;
     align-items: center;
+    cursor: pointer;
 `;
 
 export const OneLineButton = styled.div`
@@ -134,6 +135,7 @@ export const LabelField = styled.div<{ color: string }>`
     color: ${(props) => props.color};
 `;
 
+// horizontal: inline-block, width  ---- vertical: block , height
 export const Space = styled.span<{ width?: string; height?: string; display?: string }>`
     width: ${(props) => props.width};
     height: ${(props) => props.height};
@@ -142,4 +144,9 @@ export const Space = styled.span<{ width?: string; height?: string; display?: st
 
 export const TextAlignCenter = styled.div`
     text-align: center;
+`;
+
+export const FormControl = styled.div`
+    width: 100%;
+    margin: 1em 0;
 `;

@@ -21,7 +21,7 @@ const AssignDragEventOnMount = (targetRef: any, handlerRef: MutableRefObject<any
     }, []);
 };
 
-const useDragEvents = (targetRef: MutableRefObject<any>, setDraggable = true) => {
+export const useDragEvents = (targetRef: MutableRefObject<any>, setDraggable = true) => {
     const [onDrag, setOnDrag] = useCreateHandlerSetter();
     const [onDrop, setOnDrop] = useCreateHandlerSetter();
     const [onDragEnter, setOnDragEnter] = useCreateHandlerSetter();

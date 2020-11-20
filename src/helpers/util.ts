@@ -1,3 +1,5 @@
+import Resizer from 'react-image-file-resizer';
+
 export function timeSince(date: Date): string {
     const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
 
@@ -24,3 +26,19 @@ export function timeSince(date: Date): string {
     }
     return Math.floor(seconds) + ' seconds';
 }
+
+export const resizeFile = (file: Blob, maxWidth: number, maxHeight: number) =>
+    new Promise((resolve) => {
+        Resizer.imageFileResizer(
+            file,
+            maxWidth,
+            maxHeight,
+            'PNG',
+            100,
+            0,
+            (uri: any) => {
+                resolve(uri);
+            },
+            'blob',
+        );
+    });

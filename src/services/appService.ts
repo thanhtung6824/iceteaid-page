@@ -20,3 +20,11 @@ export const getUsers = async (key: string, { id }: { id: string }): Promise<Res
 export const regenerateKey = async (id: string): Promise<Response> => {
     return await httpClient.post(`app/regenerate`, { id });
 };
+
+export const getAppByUser = async (): Promise<Response> => {
+    return await httpClient.get('app/getAppByUser');
+};
+
+export const updateStatusApp = async ({ id, status }: { id: string; status: boolean }): Promise<Response> => {
+    return await httpClient.post('app/updateStatus', { id, status });
+};
