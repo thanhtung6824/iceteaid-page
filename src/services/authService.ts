@@ -12,3 +12,19 @@ export const verifyOtp = async ({ email, verifyCode }: { email: string; verifyCo
 export const getMetaData = async (): Promise<Response> => {
     return await httpClient.get('/users/metadata');
 };
+
+export const getQrCode = async ({ email }: { email: string }): Promise<Response> => {
+    return await httpClient.post('/account/qrcode/generate', { emailOrPhone: email, channel: 'email' });
+};
+
+export const enableVerifyQrCode = async ({ verifyCode }: { verifyCode: string }): Promise<Response> => {
+    return await httpClient.post('/account/qrcode/enable', { verifyCode });
+};
+
+export const disableVerifyQrCode = async (): Promise<Response> => {
+    return await httpClient.post('/account/qrcode/disable');
+};
+
+export const getStatusVerifyQrCode = async (): Promise<Response> => {
+    return await httpClient.get('/account/qrcode/status');
+};

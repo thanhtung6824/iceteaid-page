@@ -10,6 +10,7 @@ import logo from '../../assets/img/logo.svg';
 import homeIcon from '../../assets/img/home.svg';
 import userIcon from '../../assets/img/user.svg';
 import keyIcon from '../../assets/img/key.svg';
+import securityIcon from '../../assets/img/security.svg';
 import { useDarkMode, useRouter } from '../../hooks';
 import { AppState, AppStateWithColor, selectedAppState } from '../../recoil/atom';
 import { MenuPro } from '../elements/Menu';
@@ -64,6 +65,21 @@ const Sidebar = () => {
                         </Icon>
                         <Text className={'iconText'} color={darkMode.value ? '#878dab' : '#405BF5'}>
                             App
+                        </Text>
+                    </NavLink>
+                    <NavLink
+                        activeStyle={{
+                            fontWeight: 'bold',
+                            backgroundColor: darkMode.value ? 'rgb(45 53 78)' : '#D9DEFD',
+                            borderRadius: '1.5em',
+                        }}
+                        to="/security"
+                    >
+                        <Icon className={'icon'}>
+                            <img src={securityIcon} alt="key" />
+                        </Icon>
+                        <Text className={'iconText'} color={darkMode.value ? '#878dab' : '#405BF5'}>
+                            Security
                         </Text>
                     </NavLink>
                 </SidebarList>

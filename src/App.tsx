@@ -15,6 +15,7 @@ const Dashboard = React.lazy(() => import('./components/pages/Dashboard'));
 const Layout = React.lazy(() => import('./components/layouts/Layout'));
 const Profile = React.lazy(() => import('./components/pages/Profile'));
 const ListApp = React.lazy(() => import('./components/pages/ListApp'));
+const Security = React.lazy(() => import('./components/pages/Security'));
 
 const queryCache = new QueryClient({
     defaultOptions: {
@@ -40,6 +41,7 @@ function App(): JSX.Element {
                                         <PublicRoute path={'/login'} component={Login} />
                                         <ProtectedRoute layout={Layout} exact component={Profile} path="/" />
                                         <ProtectedRoute layout={Layout} component={ListApp} path="/app" />
+                                        <ProtectedRoute layout={Layout} component={Security} path="/security" />
                                     </Switch>
                                 </Router>
                             </ProvideAuth>
